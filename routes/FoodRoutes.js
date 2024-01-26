@@ -9,7 +9,10 @@ import {
 
 const router = express.Router();
 
-router.route("/").get(getAllFoods).post(createFood);
-router.route("/:id").get(getFoodById).put(updateFood).delete(deleteFood);
+router.get("/", getAllFoods);
+router.post("/", createFood);
+router.get("/:id", getFoodById);
+router.put("/:id", updateFood);
+router.delete("/:id", deleteFood);
 
 export default router;
